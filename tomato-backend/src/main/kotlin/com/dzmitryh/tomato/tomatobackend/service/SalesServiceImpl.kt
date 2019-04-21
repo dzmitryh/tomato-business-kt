@@ -18,9 +18,9 @@ val RANDOM = Random()
 class SalesServiceImpl : SalesService {
 
     override fun getSales(size: Int): Collection<Sale> {
+        val dates = getDates()
         return 1.rangeTo(size)
                 .map {
-                    val dates = getDates()
                     Sale(
                             UUID.randomUUID().toString(),
                             RANDOM.nextInt(TOMATOES_UPPER_BOUND),
